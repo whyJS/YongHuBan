@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>顺道嘉</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <!--  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> -->
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black" /> -->
+    <!-- <meta name="format-detection" content="telephone=no, email=no" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- 适应移动端end -->
+    <!-- 打电话功能 -->
+    <meta name="format-detection" content="telephone=yes"/>
+		
+		<!-- 适应移动端end -->
+ 		<!-- 引入高德地图 -->
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=1f648c12a2709a14b0e79551fdc5f791&plugin=AMap.Geolocation,AMap.Geocoder,AMap.Autocomplete,AMap.PlaceSearch,AMap.CitySearch"></script>
+		<!-- 引入分享插件 -->
+ 		<script type="text/javascript" id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21468e1389068"></script>
+ 		<!--微信Js-->
+ 		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

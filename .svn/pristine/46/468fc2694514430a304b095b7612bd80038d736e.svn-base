@@ -1,0 +1,334 @@
+*{
+    margin:0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+.clear{
+    clear:both;
+}
+/*主页标题开始*/
+.page-title{
+    width:1200px;
+    margin:0 auto;
+}
+.page-title h1,h3{
+    text-align: center;
+    color:#000000;
+}
+.page-title h1{
+    font-size: 36px;
+    margin-top: 60px ;
+    margin-bottom:20px;
+}
+.page-title .line{
+    width:70px;
+    height:4px;
+    background:#00559B;
+    margin:0 auto;
+}
+.page-title h3{
+    font-size: 18px;
+    margin-top:16px;
+    margin-bottom: 96px;
+}
+/*主页标题结束*/
+/*主页内容开始*/
+.page-main{
+    margin:0 auto;
+}
+.page-main li{
+    float:left;
+}
+/*热门推荐开始*/
+.page-main .hot{
+    width:45%;
+    margin-right:4%;
+}
+.page-main .hot-title,.new-title{
+    font-size: 22px;
+    color:#00325a;
+}
+.page-main .line-1{
+    width:20%;
+    height:2px;
+    background:#808080;
+    margin-top: 18px;
+    margin-bottom: 24px;
+}
+.page-main .hot-img img{
+    width:100%;
+}
+.page-main .hot-new{
+    height:140px;
+    background:#FAFAFA;
+    text-align: center;
+}
+.page-main .hot-new h4{
+    font-size: 18px;
+    color:#000000;
+}
+.page-main .hot-new p{
+    font-size: 14px;
+    color:#000000;
+}
+.hot .tips{
+    z-index: 10000;
+    width:10px;
+    height:10px;
+    border-radius: 10px;
+    color:red;
+}
+/*热门推荐结束*/
+
+/*最新动态开始*/
+.page-main .new{
+    width:50%;
+    margin-bottom:90px;
+}
+.page-main .new .new-main .line-2{
+    height:2px;
+    background:#E6E6E6;
+}
+.page-main table{
+    margin:20px;
+}
+.page-main table .day{
+    font-size: 48px;
+}
+.page-main table .date{
+    font-size: 14px;
+}
+.page-main table .day1,.date1,.new-main-title,.new-main-page{
+    color:#999999;
+}
+/*最新动态结束*/
+/*主页内容结束*/
+/*下载二维码开始*/
+.down{
+    width:1200px;
+    background:#FDFDFD;
+    padding-top: 5%;
+    position: relative;
+    margin:0 auto;
+    padding-bottom: 146px;
+    box-sizing: border-box;
+}
+/*左边手机图标*/
+.down .phone{
+    width:100%;
+    text-align: center;
+}
+.down .down-img{
+    width:50%;
+    float:left;
+}
+/*右边点击下载二维码*/
+.down .down-erweima h1{
+    font-family:PingFangSC Medium;
+    font-size: 32px;
+    color:#00325a;
+    margin-bottom: 116px;
+}
+.down .down-erweima #android img{
+    margin:80px 0px;
+}
+.down .cli-erweima{
+    z-index:1000;
+    width:427px;
+    height:427px;
+    position: absolute;
+    top:30%;
+    left:25%;
+}
+.down .cli-erweima img{
+    width:100%;
+    height:100%;
+}
+.down .cli-erweima .cli-phone{
+    display: none;
+}
+.down .cli-erweima .cli-android{
+    display: none;
+}
+.down .cli-erweima .cli-gzh{
+    display: none;
+}
+.down .cli-erweima-page{
+    display: none;
+}
+/*下载二维码结束*/
+/*响应式开始*/
+/*768px--1200px之间*/
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    /*主页标题*/
+    .page-title{
+        width:100%;
+        padding:0px 10px;
+        box-sizing: border-box;
+    }
+    .page-title h1{
+        font-size: 30px;
+        margin-top: 60px ;
+        margin-bottom:20px;
+    }
+    .page-title h3{
+        font-size: 16px;
+        margin-top:16px;
+        margin-bottom: 60px;
+    }
+
+    /*下载二维码开始*/
+    .down{
+        width:100%;
+        background:#ffffff;
+        padding-top: 4%;
+        padding-bottom: 0px;
+        position: static;
+        margin:0 auto;
+        box-sizing: border-box;
+    }
+    /*左边手机图标*/
+    .down .phone{
+        width:100%;
+        text-align: center;
+    }
+    .down .down-img{
+        display: none;
+    }
+    .down .down-erweima h1{
+        display: none;
+    }
+    .down .down-erweima #phone,#android,#weixin img{
+        display:none;
+    }
+    .down .cli-erweima{
+        z-index:0;
+        width:100%;
+        height:100%;
+        position: static;
+    }
+    .down .cli-erweima img{
+        width:50%;
+        float:left;
+    }
+    .down .cli-erweima .cli-phone{
+        display: block;
+    }
+    .down .cli-erweima .cli-android{
+        display: none;
+    }
+    .down .cli-erweima .cli-gzh{
+        display: block;
+    }
+    .down .cli-erweima-page{
+        display: block;
+        width:100%;
+        padding:0px 10px;
+        font-size: 28px;
+        box-sizing: border-box;
+    }
+    .down .cli-erweima-page span{
+        display: inline-block;
+        width:49%;
+        text-align: center;
+    }
+}
+/*320px--767px  之间*/
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    /*主页标题*/
+    .page-title{
+        width:100%;
+        padding:0px 10px;
+        box-sizing: border-box;
+    }
+    .page-title h1{
+        font-size: 26px;
+        margin-top: 60px ;
+        margin-bottom:20px;
+    }
+    .page-title h3{
+        font-size: 16px;
+        margin-top:16px;
+        margin-bottom: 40px;
+    }
+    /*主页内容*/
+    .page-main li{
+        float:left;
+    }
+    /*热门推荐开始*/
+    .page-main .hot{
+        width:100%;
+        margin-bottom: 40px;
+    }
+    .page-main .hot-title,.new-title{
+        font-size: 18px;
+        color:#00325a;
+    }
+    /*热门推荐结束*/
+    /*最新动态开始*/
+    .page-main .new{
+        width:100%;
+        margin-bottom:40px;
+    }
+    /*最新动态结束*/
+    /*下载二维码开始*/
+    .down{
+        width:100%;
+        background:#ffffff;
+        padding-top:4%;
+        position: static;
+        margin:0 auto;
+        padding-bottom: 0px;
+        box-sizing: border-box;
+    }
+    /*左边手机图标*/
+    .down .phone{
+        width:100%;
+        text-align: center;
+    }
+    .down .down-erweima h1{
+        display: none;
+    }
+    .down .down-erweima #phone,#android,#weixin img{
+        display:none;
+    }
+    .down .down-img{
+        display: none;
+    }
+    .down .down-erweima #phone,#android,#weixin img{
+        display:none;
+    }
+    .down .cli-erweima{
+        z-index:0;
+        width:100%;
+        height:100%;
+        position: static;
+    }
+    .down .cli-erweima img{
+        width:50%;
+        float:left;
+    }
+    .down .cli-erweima .cli-phone{
+        display: block;
+    }
+    .down .cli-erweima .cli-android{
+        display: none;
+    }
+    .down .cli-erweima .cli-gzh{
+        display: block;
+    }
+    .down .cli-erweima-page{
+        display: block;
+        width:100%;
+        margin-top:20px;
+        padding:0px 10px;
+        font-size: 18px;
+        box-sizing: border-box;
+    }
+    .down .cli-erweima-page span{
+        display: inline-block;
+        width:49%;
+        text-align: center;
+    }
+}

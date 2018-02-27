@@ -1,0 +1,103 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "pingpp-js",
+        "scope": null,
+        "escapedName": "pingpp-js",
+        "name": "pingpp-js",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\Administrator\\Desktop\\顺道嘉"
+    ]
+  ],
+  "_from": "pingpp-js@latest",
+  "_id": "pingpp-js@2.1.16",
+  "_inCache": true,
+  "_location": "/pingpp-js",
+  "_nodeVersion": "8.9.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/pingpp-js-2.1.16.tgz_1513075957111_0.3331524324603379"
+  },
+  "_npmUser": {
+    "name": "afon",
+    "email": "wengxufeng@gmail.com"
+  },
+  "_npmVersion": "5.5.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "pingpp-js",
+    "scope": null,
+    "escapedName": "pingpp-js",
+    "name": "pingpp-js",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/pingpp-js/-/pingpp-js-2.1.16.tgz",
+  "_shasum": "bae77da57909cc9eb91e560c023de2dc895764eb",
+  "_shrinkwrap": null,
+  "_spec": "pingpp-js",
+  "_where": "C:\\Users\\Administrator\\Desktop\\顺道嘉",
+  "author": {
+    "name": "Afon"
+  },
+  "bugs": {
+    "url": "https://github.com/PingPlusPlus/pingpp-js/issues"
+  },
+  "dependencies": {},
+  "description": "Ping++ HTML5 SDK",
+  "devDependencies": {
+    "browserify": "^13.3.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-0B8RXDShAYkg/SGv+fvQ2Rq2g57Z/+34wjluVHN7E6iokYY/oepzaNFBLstdys0Hc0VtzxeqWELqnBmhEBCP/w==",
+    "shasum": "bae77da57909cc9eb91e560c023de2dc895764eb",
+    "tarball": "https://registry.npmjs.org/pingpp-js/-/pingpp-js-2.1.16.tgz"
+  },
+  "gitHead": "3064dae667a87a47c4ba3e5d0c03f046182674a9",
+  "homepage": "https://www.pingxx.com",
+  "keywords": [
+    "javascript",
+    "payment",
+    "library",
+    "browser"
+  ],
+  "license": "MIT",
+  "main": "src/main.js",
+  "maintainers": [
+    {
+      "name": "afon",
+      "email": "wengxufeng@gmail.com"
+    }
+  ],
+  "name": "pingpp-js",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PingPlusPlus/pingpp-js.git"
+  },
+  "scripts": {
+    "build": "npm install && gulp",
+    "test": "gulp && gulp test"
+  },
+  "version": "2.1.16"
+}

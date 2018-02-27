@@ -1,0 +1,94 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "vue-picture-input",
+        "scope": null,
+        "escapedName": "vue-picture-input",
+        "name": "vue-picture-input",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\BANGONG\\WAMP\\wamp\\www\\H5\\ShunDaoJia"
+    ]
+  ],
+  "_from": "vue-picture-input@latest",
+  "_id": "vue-picture-input@1.16.0",
+  "_inCache": true,
+  "_location": "/vue-picture-input",
+  "_nodeVersion": "8.1.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/vue-picture-input-1.16.0.tgz_1505898927646_0.11895819031633437"
+  },
+  "_npmUser": {
+    "name": "maffeis",
+    "email": "alessio@maffe.is"
+  },
+  "_npmVersion": "5.0.4",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "vue-picture-input",
+    "scope": null,
+    "escapedName": "vue-picture-input",
+    "name": "vue-picture-input",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue-picture-input/-/vue-picture-input-1.16.0.tgz",
+  "_shasum": "9e6cbb1ec3028e580d3cdc2e31b22d22d4158f0b",
+  "_shrinkwrap": null,
+  "_spec": "vue-picture-input",
+  "_where": "C:\\BANGONG\\WAMP\\wamp\\www\\H5\\ShunDaoJia",
+  "author": {
+    "name": "alessio@maffe.is"
+  },
+  "bugs": {
+    "url": "https://github.com/alessiomaffeis/vue-picture-input/issues"
+  },
+  "dependencies": {},
+  "description": "Mobile-friendly picture file input component with image preview and drag and drop.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-ZX21YYluhKxHX+cQqr9UuIYeu8s+e335I5paDNLd7i/RnzyPtXqO0VwYXB4VOq/KsnbYJUHViNP9xr32qSZh5Q==",
+    "shasum": "9e6cbb1ec3028e580d3cdc2e31b22d22d4158f0b",
+    "tarball": "https://registry.npmjs.org/vue-picture-input/-/vue-picture-input-1.16.0.tgz"
+  },
+  "gitHead": "4bae694e6d5c54cbceeaab45a727e0c464756d08",
+  "homepage": "https://github.com/alessiomaffeis/vue-picture-input",
+  "keywords": [
+    "VueJs",
+    "picture",
+    "image",
+    "input",
+    "preview",
+    "form",
+    "upload"
+  ],
+  "license": "MIT",
+  "main": "PictureInput.vue",
+  "maintainers": [
+    {
+      "name": "maffeis",
+      "email": "alessio@maffe.is"
+    }
+  ],
+  "name": "vue-picture-input",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alessiomaffeis/vue-picture-input.git"
+  },
+  "scripts": {
+    "test": "npm run unit"
+  },
+  "version": "1.16.0"
+}

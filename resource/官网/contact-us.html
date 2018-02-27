@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- 删除苹果默认的工具栏和菜单栏 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 设置苹果工具栏颜色 -->
+		<meta name="format-detection" content="telphone=no, email=no" />
+		<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+		<!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		<!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- 适应移动端end -->
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=1f648c12a2709a14b0e79551fdc5f791&plugin=AMap.Geolocation,AMap.Geocoder,AMap.Autocomplete"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.pagination.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background: #f7f7f7;
+			}
+			
+			.wrapper {
+				width: 1200px;
+				text-align: center;
+				margin: 0 auto;
+				transform: translate(50%, 0);
+				-ms-transform: translate(50%, 0);
+				-webkit-transform: translate(50%, 0);
+				-o-transform: translate(50%, 0);
+				-moz-transform: translate(50%, 0);
+			}
+			
+			.wrapper img {
+				transform: translate(-50%, 0);
+				-ms-transform: translate(-50%, 0);
+				-webkit-transform: translate(-50%, 0);
+				-o-transform: translate(-50%, 0);
+				-moz-transform: translate(-50%, 0);
+			}
+			
+			@media only screen and (min-width: 100px) and (max-width: 1200px) {
+				.wrapper {
+					width: 100%;
+					text-align: center;
+					margin: 0 auto;
+					transform: translate(50%, 0);
+					-ms-transform: translate(50%, 0);
+					-webkit-transform: translate(50%, 0);
+					-o-transform: translate(50%, 0);
+					-moz-transform: translate(50%, 0);
+				}
+				.wrapper img {
+					transform: translate(-50%, 0);
+					-ms-transform: translate(-50%, 0);
+					-webkit-transform: translate(-50%, 0);
+					-o-transform: translate(-50%, 0);
+					-moz-transform: translate(-50%, 0);
+					width: 100%;
+					height: auto;
+				}
+				.content {
+					width: 100%;
+					box-sizing: border-box;
+					background: #FFFFFF;
+					padding: 10px;
+					margin: 0 auto;
+					margin-bottom: 85px;
+					margin-top: 50px;
+				}
+			}
+			/*内容*/
+			
+			.about-content {
+				width: 1200px;
+				margin: 0 auto;
+				display: flex;
+				display: -webkit-flex;
+				margin-bottom: 150px;
+			}
+			/*左侧导航*/
+			
+			.left {
+				width: 21%;
+				background: #eeeeee;
+			}
+			
+			.about-list {
+				list-style-type: none;
+			}
+			
+			.about-list li {
+				width: 100%;
+				text-align: center;
+				height: 70px;
+				font-size: 24px;
+				line-height: 70px;
+				color: #262626;
+			}
+			
+			.about-list li:hover {
+				color: #FFFFFF;
+				background: #00559B;
+				cursor: pointer;
+			}
+			
+			.about-list li.active {
+				color: #FFFFFF;
+				background: #00559B;
+			}
+			/*右侧内容*/
+			
+			.right {
+				flex: 1;
+				box-sizing: border-box;
+				padding-left: 40px;
+				padding-right: 40px;
+				padding-top: 40px;
+			}
+			
+			.right-content {
+				box-sizing: border-box;
+				padding: 30px;
+				background: #FFFFFF;
+			}
+			
+			.right-content header {
+				font-size: 30px;
+				color: #00325A;
+			}
+			
+			.right-content header span {
+				display: inline-block;
+				font-size: 28px;
+			}
+			
+			.right-content header span:first-child {
+				padding-left: 20px;
+				padding-right: 20px;
+				font-size: 28px;
+			}
+			/*内容*/
+			
+			.text {
+				margin-top: 26px;
+				box-sizing: border-box;
+			}
+			/*公司地址*/
+			
+			.text .text-div:first-child {
+				margin-top: 50px;
+				margin-bottom: 26px;
+			}
+			
+			.text-div div {
+				display: inline-block;
+				font-size: 20px;
+				color: #262626;
+				vertical-align: middle;
+			}
+			
+			.text-div img:first-child {
+				padding-right: 15px;
+				vertical-align: middle;
+			}
+			
+			.mapwrapper {
+				width: 100%;
+				height: 500px;
+				margin-top: 60px;
+				border: 1px solid #F7F7F7;
+				-moz-box-shadow: 4px 4px 20px #333333;
+				-webkit-box-shadow: 4px 4px 20px #333333;
+				box-shadow: 4px 4px 20px #333333;
+			}
+			/*在线留言*/
+			
+			.message {
+				padding-left: 20px;
+			}
+			
+			.message-d1 {
+				font-size: 30px;
+				color: #FFFFFF;
+				background: #00559B;
+				width: 100%;
+				border-radius: 8px;
+				box-sizing: border-box;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+			}
+			
+			.message-d2 {
+				background: #f2f2f2;
+				padding-top: 50px;
+				box-sizing: border-box;
+				padding-left: 45px;
+				padding-right: 50px;
+				padding-bottom: 50px;
+			}
+			
+			.message-d2 form {
+				width: 100%;
+			}
+			
+			.message-d2 form div {
+				display: flex;
+				display: -webkit-flex;
+				margin-bottom: 40px;
+			}
+			
+			.message-d2 form div input:last-child {
+				flex: 1;
+				border: 1px solid #dedede;
+				border-radius: 4px;
+			}
+			
+			.message-d2 form div textarea:last-child {
+				flex: 1;
+				border: 1px solid #dedede;
+				border-radius: 4px;
+				height: 230px;
+			}
+			
+			.message-d2 form div>span {
+				width: 32%;
+				box-sizing: border-box;
+				font-size: 29px;
+				color: #262626;
+				text-align: center;
+			}
+			
+			.message-d2 form>p {
+				width: 100%;
+				text-align: center;
+			}
+			
+			.message-d2 form>p input {
+				background: #00559b;
+				border-radius: 4px;
+				color: #FFFFFF;
+				font-size: 32px;
+				width: 178px;
+				height: 55px;
+				border: 0px solid black;
+			}
+			/*人才招聘*/
+			
+			.hiring img {
+				width: 100%;
+				height: auto;
+			}
+			/*移动端适配*/
+			
+			@media only screen and (min-width: 100px) and (max-width: 1200px) {
+				.about-content {
+					width: 100%;
+					margin: 0 auto;
+					display: flex;
+					display: -webkit-flex;
+					margin-bottom: 150px;
+					flex-direction: column;
+				}
+				.left {
+					width: 100%;
+					background: #eeeeee;
+				}
+				.about-list li {
+					width: 33.3333%;
+					text-align: center;
+					height: 70px;
+					font-size: 18px;
+					line-height: 70px;
+					color: #262626;
+					float: left;
+				}
+				.right {
+					flex: 1;
+					box-sizing: border-box;
+					padding-left: 0px;
+					padding-right: 0px;
+					padding-top: 20px;
+				}
+				.right-content {
+					box-sizing: border-box;
+					padding: 0px;
+					padding-left: 10px;
+					padding-right: 10px;
+					background: #FFFFFF;
+				}
+				.hiring {
+					padding-bottom: 60px;
+				}
+				.mapwrapper {
+					width: 100%;
+					height: 360px;
+					margin-top: 40px;
+					border: 1px solid #F7F7F7;
+					-moz-box-shadow: 4px 4px 20px #333333;
+					-webkit-box-shadow: 4px 4px 20px #333333;
+					box-shadow: 4px 4px 20px #333333;
+				}
+				/*在线留言*/
+				.message {
+					padding-left: 0px;
+				}
+			}
+			
+			@media only screen and (min-width: 326px) and (max-width: 767px) {
+				.about-content {
+					margin-bottom: 60px;
+				}
+				.about-list li {
+					width: 33.333%;
+					text-align: center;
+					height: 40px;
+					font-size: 16px;
+					line-height: 40px;
+					color: #262626;
+					float: left;
+				}
+				.mapwrapper {
+					width: 100%;
+					height: 300px;
+					margin-top: 20px;
+					border: 1px solid #F7F7F7;
+					-moz-box-shadow: 0px 0px 0px #333333;
+					-webkit-box-shadow: 0px 0px 0px #333333;
+					box-shadow: 0px 0px 0px #333333;
+				}
+				.text-div div {
+					display: inline-block;
+					font-size: 10px;
+					color: #262626;
+					vertical-align: middle;
+				}
+				.text-div img:first-child {
+					width: 16px;
+					height: 16px;
+					padding-right: 6px;
+					vertical-align: middle;
+				}
+				.text .text-div:first-child {
+					margin-top: 20px;
+					margin-bottom: 10px;
+				}
+				/*在线留言*/
+				.message {
+					padding-left: 0px;
+				}
+				.message-d1 {
+					font-size: 14px;
+					color: #FFFFFF;
+					background: #00559B;
+					width: 100%;
+					border-radius: 2px;
+					box-sizing: border-box;
+					height: 40px;
+					line-height: 40px;
+					text-align: center;
+				}
+				.message-d2 {
+					background: #f2f2f2;
+					padding-top: 30px;
+					box-sizing: border-box;
+					padding-left: 4px;
+					padding-right: 4px;
+					padding-bottom: 30px;
+				}
+				.message-d2 form {
+					width: 100%;
+				}
+				.message-d2 form div img {
+					height: 24px;
+					width: 24px;
+				}
+				.message-d2 form div {
+					display: flex;
+					display: -webkit-flex;
+					margin-bottom: 40px;
+				}
+				.message-d2 form div input:last-child {
+					flex: 1;
+					border: 1px solid #dedede;
+					border-radius: 4px;
+				}
+				.message-d2 form div textarea:last-child {
+					flex: 1;
+					border: 1px solid #dedede;
+					border-radius: 4px;
+					height: 100px;
+				}
+				.message-d2 form div>span {
+					width: 26%;
+					box-sizing: border-box;
+					font-size: 12px;
+					line-height: 24px;
+					color: #262626;
+					text-align: center;
+				}
+				.message-d2 form>p {
+					width: 100%;
+					text-align: center;
+				}
+				.message-d2 form>p input {
+					background: #00559b;
+					border-radius: 4px;
+					color: #FFFFFF;
+					font-size: 16px;
+					width: 108px;
+					height: 25px;
+					border: 0px solid black;
+				}
+			}
+			
+			@media only screen and (min-width: 100px) and (max-width: 326px) {
+				.about-content {
+					margin-bottom: 60px;
+				}
+				.about-list li {
+					width: 33.333%;
+					text-align: center;
+					height: 40px;
+					font-size: 16px;
+					line-height: 40px;
+					color: #262626;
+					float: left;
+				}
+				.mapwrapper {
+					width: 100%;
+					height: 300px;
+					margin-top: 20px;
+					border: 1px solid #F7F7F7;
+					-moz-box-shadow: 0px 0px 0px #333333;
+					-webkit-box-shadow: 0px 0px 0px #333333;
+					box-shadow: 0px 0px 0px #333333;
+				}
+				.text-div div {
+					display: inline-block;
+					font-size: 10px;
+					color: #262626;
+					vertical-align: middle;
+				}
+				.text-div img:first-child {
+					width: 16px;
+					height: 16px;
+					padding-right: 6px;
+					vertical-align: middle;
+				}
+				.text .text-div:first-child {
+					margin-top: 20px;
+					margin-bottom: 10px;
+				}
+				/*在线留言*/
+				.message {
+					padding-left: 0px;
+				}
+				.message-d1 {
+					font-size: 12px;
+					color: #FFFFFF;
+					background: #00559B;
+					width: 100%;
+					border-radius: 2px;
+					box-sizing: border-box;
+					height: 40px;
+					line-height: 40px;
+					text-align: center;
+				}
+				.message-d2 {
+					background: #f2f2f2;
+					padding-top: 30px;
+					box-sizing: border-box;
+					padding-left: 4px;
+					padding-right: 4px;
+					padding-bottom: 30px;
+				}
+				.message-d2 form {
+					width: 100%;
+				}
+				.message-d2 form div img {
+					height: 24px;
+					width: 24px;
+				}
+				.message-d2 form div {
+					display: flex;
+					display: -webkit-flex;
+					margin-bottom: 40px;
+				}
+				.message-d2 form div input:last-child {
+					flex: 1;
+					border: 1px solid #dedede;
+					border-radius: 4px;
+				}
+				.message-d2 form div textarea:last-child {
+					flex: 1;
+					border: 1px solid #dedede;
+					border-radius: 4px;
+					height: 100px;
+				}
+				.message-d2 form div>span {
+					width: 26%;
+					box-sizing: border-box;
+					font-size: 12px;
+					line-height: 24px;
+					color: #262626;
+					text-align: center;
+				}
+				.message-d2 form>p {
+					width: 100%;
+					text-align: center;
+				}
+				.message-d2 form>p input {
+					background: #00559b;
+					border-radius: 4px;
+					color: #FFFFFF;
+					font-size: 16px;
+					width: 108px;
+					height: 25px;
+					border: 0px solid black;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部图片-->
+		<div style="width: 100%;overflow: hidden;">
+			<div class="wrapper">
+				<img src="img/banner01.jpg" alt="">
+			</div>
+		</div>
+		<!--内容-->
+		<div class="about-content">
+			<div class="left">
+				<ul class="about-list">
+					<li class="active" id="li1">公司地址</li>
+					<li id="li2">在线留言</li>
+					<li id="li3">人才招聘</li>
+				</ul>
+			</div>
+			<div class="right">
+				<!--公司地址-->
+				<div class="right-content" id="about1">
+					<!--标题-->
+					<header>
+						<span>|</span><span>公司地址</span>
+					</header>
+					<!--内容-->
+					<div class="text">
+						<div class="text-div">
+
+							<img src="img/图层-19.png" />
+
+							<div class="">
+								北京市通州区金融街园中园五号院56栋1层101-012室
+							</div>
+						</div>
+						<div class="text-div">
+							<img src="img/图层-20.png" />
+							<div class="">
+								电话：4000-111-228
+							</div>
+						</div>
+
+						<!--地图-->
+						<div class="mapwrapper" id="container">
+
+						</div>
+					</div>
+				</div>
+
+				<!--在线留言-->
+				<div class="right-content" id="about2">
+					<!--标题-->
+					<header>
+						<span>|</span><span>在线留言</span>
+					</header>
+					<!--内容-->
+					<div class="text message">
+						<div class="message-d1">
+							您正在和北京同创共享网络科技有限公司进行留言
+						</div>
+						<div class="message-d2">
+							<form action="" method="post">
+								<div>
+									<img src="img/图层-20s (1).png" />
+									<span>姓<span style="visibility: hidden;">线留</span>名：</span>
+									<input type="text" name="" id="" value="" placeholder="请输入姓名" />
+								</div>
+								<div>
+									<img src="img/图层-21.png" />
+									<span>电<span style="visibility: hidden;">线留</span>话：</span>
+									<input type="text" name="" id="" value="" placeholder="请输入电话" />
+								</div>
+								<div>
+									<p id="">
+										<img src="img/图层-22.png" />
+									</p>
+
+									<span>在线留言：</span>
+									<textarea placeholder="在线留言"></textarea>
+								</div>
+								<p id="">
+									<input type="submit" value="确认提交" />
+								</p>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!--人才招聘-->
+				<div class="right-content" id="about3">
+					<!--标题-->
+					<header>
+						<span>|</span><span>人才招聘</span>
+					</header>
+					<!--内容-->
+					<div class="text hiring">
+						<img src="img/招聘.png" />
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//地图
+				var map = new AMap.Map('container', {
+					resizeEnable: true,
+					center: [116.63489, 39.942257],
+					zoom: 15
+				});
+				var marker = new AMap.Marker({
+					position: [116.63489, 39.942257],
+					map: map
+				});
+				marker.setLabel({ //label默认蓝框白底左上角显示，样式className为：amap-marker-label
+					offset: new AMap.Pixel(-90, -30), //修改label相对于maker的位置
+					content: "我在金融街园中园五号院56号楼 附近"
+				});
+
+				function content1() {
+					$('.about-list li').removeClass('active')
+					$('#li1').addClass('active')
+					$('#about1').css({
+						'display': 'block'
+					})
+					$('#about2').css({
+						'display': 'none'
+					})
+					$('#about3').css({
+						'display': 'none'
+					})
+				}
+
+				function content2() {
+					$('.about-list li').removeClass('active')
+					$('#li2').addClass('active')
+					$('#about2').css({
+						'display': 'block'
+					})
+					$('#about1').css({
+						'display': 'none'
+					})
+					$('#about3').css({
+						'display': 'none'
+					})
+				}
+
+				function content3() {
+					$('.about-list li').removeClass('active')
+					$('#li3').addClass('active')
+					$('#about3').css({
+						'display': 'block'
+					})
+					$('#about2').css({
+						'display': 'none'
+					})
+					$('#about1').css({
+						'display': 'none'
+					})
+				}
+
+				var a = 1;
+				if(a == 1) {
+					content1()
+				} else if(a == 2) {
+					content2()
+				} else {
+					content3()
+				}
+				$('#li1').click(function() {
+					content1()
+				})
+				$('#li2').click(function() {
+					content2()
+				})
+				$('#li3').click(function() {
+					content3()
+				})
+
+			})
+		</script>
+
+	</body>
+
+</html>

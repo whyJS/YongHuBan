@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- 删除苹果默认的工具栏和菜单栏 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 设置苹果工具栏颜色 -->
+		<meta name="format-detection" content="telphone=no, email=no" />
+		<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+		<!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		<!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- 适应移动端end -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.pagination.js"></script>
+		<style type="text/css">
+			.wrapper{
+				position: relative;
+				height: 500px;
+				width: 100%;
+				border: 1px solid black;
+			}
+			.prev {
+				display: block;
+				width: 500px;
+				position: absolute;
+				bottom: 0px;
+			}
+			.next{
+				display: block;
+				width: 60px;
+				position: absolute;
+				bottom: 0px;
+				right: 0;
+			}
+			.M-box a{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+			}
+			.active{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				background: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="M-box"></div>
+		</div>
+		
+		<script type="text/javascript">
+			$('.M-box').pagination({
+//				totalData:100,
+//				showData:11,
+				coping:true,
+				pageCount:50,
+				count:5,
+				prevContent: '上一页',
+				nextContent: '下一页',
+				keepShowPN: true,
+				callback: function(api) {
+					
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

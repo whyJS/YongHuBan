@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- 删除苹果默认的工具栏和菜单栏 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 设置苹果工具栏颜色 -->
+		<meta name="format-detection" content="telphone=no, email=no" />
+		<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+		<!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		<!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- 适应移动端end -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.pagination.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #F7F7F7;
+			}
+			.content{
+				width: 1200px;
+				box-sizing: border-box;
+				background: #FFFFFF;
+				padding:40px;
+				margin: 0 auto;
+				margin-bottom: 150px;
+				margin-top: 50px;
+			}
+			.head{
+				display: inline-block;
+				height: 50px;
+				box-sizing: border-box;
+				border-bottom: 6px solid #00355f;
+				font-size: 30px;
+				line-height: 30px;
+			}
+			.title{
+				width: 100%;
+				text-align: center;
+				font-size: 28px;
+				margin-top: 50px;
+			}
+			.key{
+				display: inline-block;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 20px;
+			}
+			.img{
+				display: flex;
+				display: -webkit-flex;
+				justify-content:space-between;
+			}
+			.img div{
+				box-sizing: border-box;
+				padding-right: 6px;
+			}
+			.img div:last-child{
+				padding-right: 0px;
+			}
+			.img div img{
+				width: 100%;
+				height: auto;
+			}
+			.neirong{
+				width: 100%;
+				margin-top: 50px;
+				margin-bottom: 110px;
+				font-size: 30px;
+				line-height: 30px;
+			}
+			.recommend{
+				display: inline-block;
+				font-size: 20px;
+			}
+			
+			.wrapper {
+				width: 1200px;
+				text-align: center;
+				margin: 0 auto;
+				transform: translate(50%, 0);
+				-ms-transform: translate(50%, 0);
+				-webkit-transform: translate(50%, 0);
+				-o-transform: translate(50%, 0);
+				-moz-transform: translate(50%, 0);
+			}
+			
+			.wrapper img {
+				transform: translate(-50%, 0);
+				-ms-transform: translate(-50%, 0);
+				-webkit-transform: translate(-50%, 0);
+				-o-transform: translate(-50%, 0);
+				-moz-transform: translate(-50%, 0);
+			}
+			@media only screen and (min-width: 100px) and (max-width: 1200px) {
+				.wrapper {
+				width: 100%;
+				text-align: center;
+				margin: 0 auto;
+				transform: translate(50%, 0);
+				-ms-transform: translate(50%, 0);
+				-webkit-transform: translate(50%, 0);
+				-o-transform: translate(50%, 0);
+				-moz-transform: translate(50%, 0);
+			}
+			
+			.wrapper img {
+				transform: translate(-50%, 0);
+				-ms-transform: translate(-50%, 0);
+				-webkit-transform: translate(-50%, 0);
+				-o-transform: translate(-50%, 0);
+				-moz-transform: translate(-50%, 0);
+				width: 100%;
+				height: auto;
+			}
+			.content{
+				width: 100%;
+				box-sizing: border-box;
+				background: #FFFFFF;
+				padding:10px;
+				margin: 0 auto;
+				margin-bottom: 60px;
+				margin-top: 50px;
+			}
+			}
+			@media only screen and (min-width: 100px) and (max-width: 767px) {
+					.content{
+				width: 100%;
+				box-sizing: border-box;
+				background: #FFFFFF;
+				padding:10px;
+				margin: 0 auto;
+				margin-bottom: 60px;
+				margin-top: 20px;
+			}
+			.head{
+				display: inline-block;
+				height: 50px;
+				box-sizing: border-box;
+				border-bottom: 2px solid #00355f;
+				font-size: 18px;
+				line-height: 18px;
+			}
+			.title{
+				width: 100%;
+				text-align: center;
+				font-size: 16px;
+				margin-top: 30px;
+			}
+			.key{
+				display: inline-block;
+				margin-top: 20px;
+				margin-bottom: 20px;
+				font-size: 14px;
+			}
+			.img{
+				display: flex;
+				display: -webkit-flex;
+				justify-content:space-between;
+			}
+			.img div{
+				box-sizing: border-box;
+				padding-right: 6px;
+			}
+			.img div:last-child{
+				padding-right: 0px;
+			}
+			.img div img{
+				width: 100%;
+				height: auto;
+			}
+			.neirong{
+				width: 100%;
+				margin-top: 20px;
+				margin-bottom: 60px;
+				font-size: 14px;
+				line-height: 14px;
+			}
+			.recommend{
+				display: inline-block;
+				font-size: 16px;
+			}
+			}			
+		</style>
+	</head>
+
+	<body>
+		<!--banner-->
+		<div style="width: 100%;overflow: hidden;">
+			<div class="wrapper">
+				<img src="img/banner01.jpg" alt="">
+			</div>
+		</div>
+		<!--内容-->
+		<div class="content">
+			<div class="head">
+				新闻内容
+			</div>
+			<div class="title">
+				新闻标题新闻标题新闻标题新闻标题新闻标题
+			</div>
+			<div class="key">
+				关键词
+			</div>
+			<div class="img">
+				<div>
+					<img src="img/news-2017.jpg"/>
+				</div>
+				<div>
+					<img src="img/news-2017.jpg"/>
+				</div>
+				<div>
+					<img src="img/news-2017.jpg"/>
+				</div>
+				
+			</div>
+			<div class="neirong">
+				新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题新闻标题
+			</div>
+			<div class="recommend">
+				相关推荐
+			</div>
+		</div>
+		<script type="text/javascript">
+		
+		</script>
+
+	</body>
+
+</html>

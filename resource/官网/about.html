@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- 删除苹果默认的工具栏和菜单栏 -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- 设置苹果工具栏颜色 -->
+		<meta name="format-detection" content="telphone=no, email=no" />
+		<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+		<!-- 启用360浏览器的极速模式(webkit) -->
+		<meta name="renderer" content="webkit">
+		<!-- 避免IE使用兼容模式 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- QQ强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- UC强制全屏 -->
+		<meta name="full-screen" content="yes">
+		<!-- QQ强制全屏 -->
+		<meta name="x5-fullscreen" content="true">
+		<!-- UC应用模式 -->
+		<meta name="browsermode" content="application">
+		<!-- QQ应用模式 -->
+		<meta name="x5-page-mode" content="app">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<!-- 适应移动端end -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.pagination.js"></script>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				background: #f7f7f7;
+			}
+			
+            
+			
+			@media only screen and (min-width: 100px) and (max-width: 1200px) {
+				.wrapper {
+					width: 100%;
+					text-align: center;
+					margin: 0 auto;
+					transform: translate(50%, 0);
+					-ms-transform: translate(50%, 0);
+					-webkit-transform: translate(50%, 0);
+					-o-transform: translate(50%, 0);
+					-moz-transform: translate(50%, 0);
+				}
+				.wrapper img {
+					transform: translate(-50%, 0);
+					-ms-transform: translate(-50%, 0);
+					-webkit-transform: translate(-50%, 0);
+					-o-transform: translate(-50%, 0);
+					-moz-transform: translate(-50%, 0);
+					width: 100%;
+					height: auto;
+				}
+				.content {
+					width: 100%;
+					box-sizing: border-box;
+					background: #FFFFFF;
+					padding: 10px;
+					margin: 0 auto;
+					margin-bottom: 85px;
+					margin-top: 50px;
+				}
+			}
+			/*内容*/
+			.about-content{
+				width: 1200px;
+				margin: 0 auto;
+				display: flex;
+				display: -webkit-flex;
+				margin-bottom: 150px;
+				
+			}
+			/*左侧导航*/
+			.left{
+				width: 21%;
+				background: #eeeeee;
+			}
+			.about-list{
+				list-style-type: none;
+			}
+			.about-list li{
+				width: 100%;
+				text-align: center;
+				height: 70px;
+				font-size: 24px;
+				line-height: 70px;
+				color: #262626;
+			}
+			.about-list li:hover{
+				color: #FFFFFF;
+				background: #00559B;
+				cursor: pointer;
+			}
+			.about-list li.active{
+				color: #FFFFFF;
+				background: #00559B;
+			}
+			/*右侧内容*/
+			.right{
+				flex: 1;
+				box-sizing: border-box;
+				padding-left: 40px;
+				padding-right: 40px;
+				padding-top: 40px;
+			}
+			.right-content{
+				box-sizing: border-box;
+				padding: 30px;
+				background: #FFFFFF;
+			}
+			.right-content header{
+				font-size: 30px;
+				color: #00325A;
+			}
+			.right-content header span{
+				display: inline-block;
+				font-size: 28px;
+			}
+			.right-content header span:first-child{
+				padding-left: 20px;
+				padding-right: 20px;
+				font-size: 28px;
+			}
+			/*内容*/
+			.text{
+				margin-top: 26px;
+				box-sizing: border-box;
+			}
+			.text-div{
+				display: flex;
+				display: -webkit-flex;
+				box-sizing: border-box;
+			}
+			.text-div div{
+				box-sizing: border-box;
+				
+			}
+			.text-div div img{
+				width: 100%;
+				height: auto;
+			}
+			.text-div div:first-child{
+				padding-right: 30px;
+			}
+			.text p{
+				margin-top: 20px;
+				font-size: 20px;
+				color: #262626;
+				line-height: 33px;
+				padding-bottom: 160px;
+			}
+			/*团队介绍*/
+			.img{
+				width: 100%;
+				
+			}
+			.img img{
+				width: 100%;
+				height: auto;
+			}
+			/*项目*/
+			.project{
+				display: flex;
+				display: -webkit-flex;
+			}
+			.project div{
+				width: 50%;
+			}
+			.project div img{
+				width: 100%;
+				height: auto;
+			}
+			.project p{
+				width: 50%;
+				box-sizing: border-box;
+				padding-left: 45px;
+			}
+			/*发展历史*/
+			.history ul{
+				list-style-type: none;
+				padding-bottom: 150px;
+			}
+			.history ul li{
+				display: flex;
+				display: -webkit-flex;
+				
+			}
+			.time{
+				width: 13%;
+				padding-bottom: 28px;
+			}
+			.bott{
+				box-sizing: border-box;
+				flex: 1;
+				padding-left: 25px;
+				border-left: 2px solid #b1b1b1;
+				position: relative;
+				font-size: 18px;
+				color: #404040;
+			}
+			.bott div:first-child{
+				width: 16px;
+				height: 16px;
+				border-radius: 8px;
+				left: -9px;
+				background: #005099;
+				position: absolute;
+			}
+			.history ul li:last-child .bott{
+				border-left: 2px solid #FFFFFF;
+				
+			}
+			/*移动端适配*/
+			@media only screen and (min-width: 100px) and (max-width: 1200px) {
+				.about-content{
+				width: 100%;
+				margin: 0 auto;
+				display: flex;
+				display: -webkit-flex;
+				margin-bottom: 60px;
+				 flex-direction:column;
+			}
+			.left{
+				width: 100%;
+				background: #eeeeee;
+			}
+			.about-list li{
+				width: 25%;
+				text-align: center;
+				height: 70px;
+				font-size: 18px;
+				line-height: 70px;
+				color: #262626;
+				float: left;
+			}
+			
+				.right{
+				flex: 1;
+				box-sizing: border-box;
+				padding-left: 0px;
+				padding-right: 0px;
+				padding-top: 20px;
+			}
+			.right-content{
+				box-sizing: border-box;
+				padding: 0px;
+				padding-left: 10px;
+				padding-right: 10px;
+				background: #FFFFFF;
+			}
+			.time{
+				width: 100px;
+			}
+			}
+			@media only screen and (min-width: 100px) and (max-width: 767px) {
+					.project{
+				display: flex;
+				display: -webkit-flex;
+				 flex-direction:column;
+			}
+			.about-list li{
+				width: 25%;
+				text-align: center;
+				height: 40px;
+				font-size: 16px;
+				line-height: 40px;
+				color: #262626;
+				float: left;
+			}
+			.project div{
+				width: 100%;
+			}
+			.project div img{
+				width: 100%;
+				height: auto;
+			}
+			.project p{
+				width: 100%;
+				box-sizing: border-box;
+				padding-left: 0px;
+			}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部图片-->
+		<div style="width: 100%;overflow: hidden;">
+			<div class="wrapper">
+				<img src="img/banner01.jpg" alt="">
+			</div>
+		</div>
+		<!--内容-->
+		<div class="about-content">
+			<div class="left">
+				<ul class="about-list">
+					<li class="active" id="li1">公司简介</li>
+					<li id="li2">团队介绍</li>
+					<li id="li3">发展历程</li>
+					<li id="li4">项目介绍</li>
+				</ul>
+			</div>
+			<div class="right">
+				<!--公司简介-->
+				<div class="right-content" id="about1">
+					<!--标题-->
+					<header>
+						<span>|</span><span>公司简介</span>
+					</header>
+					<!--内容-->	
+					<div class="text">
+						<div class="text-div">
+							<div class="">
+								<img src="img/aboutus1.png"/>
+							</div>
+							<div class="">
+								<img src="img/aboutus2.png"/>
+							</div>
+						</div>
+						<p>
+							北京同创共享网络科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融
+							街园中园，旗下经营的顺道嘉APP打造了全新的社区生活服务模式。北京同创共享网络
+							科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融街园中园，旗下经
+							营的顺道嘉APP打造了全新的社区生活服务模式。<br />
+							北京同创共享网络科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融
+							街园中园，旗下经营的顺道嘉APP打造了全新的社区生活服务模式。
+
+						</p>
+					</div>
+				</div>
+				
+				<!--团队介绍-->
+				<div class="right-content" id="about2">
+					<!--标题-->
+					<header>
+						<span>|</span><span>团队介绍</span>
+					</header>
+					<!--内容-->	
+					<div class="text">
+						<div class="img">
+							<img src="img/团队介绍.png"/>
+						</div>
+						<p>
+							北京同创共享网络科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融
+							街园中园，旗下经营的顺道嘉APP打造了全新的社区生活服务模式。北京同创共享网络
+							科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融街园中园，旗下经
+							营的顺道嘉APP打造了全新的社区生活服务模式。
+
+						</p>
+					</div>
+				</div>
+				
+				<!--发展历程-->
+				<div class="right-content" id="about3">
+					<!--标题-->
+					<header>
+						<span>|</span><span>发展历程</span>
+					</header>
+					<!--内容-->	
+					<div class="text history">
+						<ul>
+							<li>
+								<div class="time">
+									2014-12
+								</div>
+								<div class="bott">
+									<div></div>
+									公司正式研发“顺道嘉”
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									2016-1
+								</div>
+								<div class="bott">
+									<div></div>
+									项目成型，“顺道嘉”服务平台开始制作
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									2014-12
+								</div>
+								<div class="bott">
+									<div></div>
+									公司正式研发顺道嘉
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									2014-12
+								</div>
+								<div class="bott">
+									<div></div>
+									公司正式研发顺道嘉
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									2014-12
+								</div>
+								<div class="bott">
+									<div></div>
+									公司正式研发顺道嘉
+								</div>
+							</li>
+							<li>
+								<div class="time">
+									2014-12
+								</div>
+								<div class="bott">
+									<div></div>
+									公司正式研发顺道嘉
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				
+				<!--项目介绍-->
+				<div class="right-content" id="about4">
+					<!--标题-->
+					<header>
+						<span>|</span><span>项目介绍</span>
+					</header>
+					<!--内容-->	
+					<div class="text project " style="padding-bottom: 150px;">
+						<div class="text-div">
+							<img src="img/项目介绍.png"/>
+						</div>
+						<p>
+							北京同创共享网络科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融
+							街园中园，旗下经营的顺道嘉APP打造了全新的社区生活服务模式。北京同创共享网络
+							科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融街园中园，旗下经
+							营的顺道嘉APP打造了全新的社区生活服务模式。<br />
+							北京同创共享网络科技有限公司是一家互联网科技综合服务平台，坐落于北京通州金融
+							街园中园，旗下经营的顺道嘉APP打造了全新的社区生活服务模式。
+
+						</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				function content1(){
+					$('.about-list li').removeClass('active')
+					$('#li1').addClass('active')
+					$('#about1').css({'display':'block'})
+					$('#about2').css({'display':'none'})
+					$('#about3').css({'display':'none'})
+					$('#about4').css({'display':'none'})
+				}
+				function content2(){
+					$('.about-list li').removeClass('active')
+					$('#li2').addClass('active')
+					$('#about2').css({'display':'block'})
+					$('#about1').css({'display':'none'})
+					$('#about3').css({'display':'none'})
+					$('#about4').css({'display':'none'})
+				}
+				function content3(){
+					$('.about-list li').removeClass('active')
+					$('#li3').addClass('active')
+					$('#about3').css({'display':'block'})
+					$('#about2').css({'display':'none'})
+					$('#about1').css({'display':'none'})
+					$('#about4').css({'display':'none'})
+				}
+				function content4(){
+					$('.about-list li').removeClass('active')
+					$('#li4').addClass('active')
+					$('#about4').css({'display':'block'})
+					$('#about2').css({'display':'none'})
+					$('#about3').css({'display':'none'})
+					$('#about1').css({'display':'none'})
+				}
+				
+				var a=1;
+				if(a==1){
+					content1()
+				}else if(a==2){
+					content2()
+				}else if(a==3){
+					content3()
+				}else{
+					content4()
+				}
+				$('#li1').click(function(){
+					content1()
+				})
+				$('#li2').click(function(){
+					content2()
+				})
+				$('#li3').click(function(){
+					content3()
+				})
+				$('#li4').click(function(){
+					content4()
+				})
+			})
+		</script>
+
+	</body>
+
+</html>
